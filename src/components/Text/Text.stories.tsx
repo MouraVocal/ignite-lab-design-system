@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { ITextProps, Text } from './Text'
+import { ITextProps, Text } from '.'
 
 export default {
   title: 'Components/Text',
@@ -13,6 +13,11 @@ export default {
       options: ['sm', 'md', 'lg'],
       control: {
         type: 'inline-radio'
+      }
+    },
+    asChild: {
+      table: {
+        disable: true
       }
     }
   }
@@ -34,8 +39,9 @@ export const Large: StoryObj<ITextProps> = {
 
 export const Custom: StoryObj<ITextProps> = {
   args: {
+    size: 'md',
     asChild: true,
-    children: <p>This is a paragraph</p>
+    children: <p>This is a custom paragraph</p>
   },
   argTypes: {
     children: {
